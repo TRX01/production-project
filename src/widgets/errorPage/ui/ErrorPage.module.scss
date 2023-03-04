@@ -1,0 +1,19 @@
+.ErrorPage {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: var(--font-l);
+}
+
+.errorPageInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.errorBtn {
+    margin-top: 5px;
+    border: 1px solid #8771D2;
+    background-color: #8771D2;
+    border-radius: 10px;
+}

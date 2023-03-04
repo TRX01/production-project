@@ -3,6 +3,11 @@
 @import 'themes/dark';
 @import 'themes/light';
 
+iframe
+{
+    display: none;
+}
+
 .app {
     font: var(--font-m);
 
