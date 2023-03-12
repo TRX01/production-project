@@ -6,14 +6,23 @@
     font: var(--font-l);
 }
 
-.errorPageInfo {
+.PageInfo {
     display: flex;
     flex-direction: column;
 }
 
-.errorBtn {
+.Btn {
     margin-top: 5px;
-    border: 1px solid #8771D2;
-    background-color: #8771D2;
+    background-color: var(--inverted-bg-color);
+    border: 1px solid var(--inverted-bg-color);
     border-radius: 10px;
+}
+
+.BtnReload {
+    margin: 3px 10px;
+}
+
+.SomeProblem {
+    display: flex;
+    justify-content: center;
 }

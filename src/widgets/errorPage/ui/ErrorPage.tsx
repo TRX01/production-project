@@ -12,13 +12,17 @@ export const ErrorPage = () => {
 
     return (
         <div className={ classNames(cls.ErrorPage, {}, []) }>
-            <div className={cls.errorPageInfo}>
-                {t('Произошла ошибка')}
+            <div className={cls.PageInfo}>
+                <div className={cls.SomeProblem}>
+                    {t('Произошла ошибка')}
+                </div>
                 <Button
                     onClick={() => { reloadPage() }}
-                    className={ classNames(cls.errorBtn) }
+                    className={ cls.Btn }
                 >
-                    {t('Обновить страницу')}
+                    <div className={ cls.BtnReload }>
+                        {t('Обновить страницу')}
+                    </div>
                 </Button>
             </div>
         </div>
