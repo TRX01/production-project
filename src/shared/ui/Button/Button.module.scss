@@ -2,6 +2,9 @@
     cursor: pointer;
     color: var(--primary-color);
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .clear {

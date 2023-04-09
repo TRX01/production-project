@@ -1,6 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { useCallback, useState } from 'react';
+import { Portal } from 'shared/ui/Portal/Portal';
+import { Modal } from 'shared/ui/Modal/Modal';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -10,10 +13,29 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
 
+    const [isAuthModal, setIsAuthModal] = useState(false)
+
+    const toggleModal = useCallback(() => {
+        setIsAuthModal(prev => !prev)
+    }, [])
+
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
-                <h1>{t('NAVBAR')}</h1>
+                <Portal>
+                    <Modal
+                        isOpen={isAuthModal}
+                        onClose={() => toggleModal()}
+                    />
+                </Portal>
+
+                <Button
+                    className={cls.authButton}
+                    theme={ButtonTheme.OUTLINE}
+                    onClick={() => toggleModal()}
+                >
+                    {t('Войти')}
+                </Button>
             </div>
         </div>
     );

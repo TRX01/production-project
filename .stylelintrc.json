@@ -5,6 +5,7 @@
     "selector-class-pattern": null,
     "rule-empty-line-before": [0],
     "no-eol-whitespace": [0],
-    "number-leading-zero": [0]
+    "number-leading-zero": [0],
+    "scss/double-slash-comment-empty-line-before": [0]
   }
 }
