@@ -8,9 +8,15 @@ import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
     className?: string;
+    small: boolean;
 }
 
-export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
+export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
+    const {
+        className,
+        small,
+    } = props
+
     const { theme, toggleTheme } = useTheme();
 
     return (
@@ -20,8 +26,8 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
             onClick={toggleTheme}
         >
             {theme === Theme.DARK
-                ? <LightIcon className={cls.sun} />
-                : <DarkIcon className={cls.moon} />}
+                ? <LightIcon className={`${small && cls.small} ${cls.sun}`} />
+                : <DarkIcon className={`${small && cls.small} ${cls.moon}`} />}
         </Button>
     );
 };
