@@ -1,0 +1,29 @@
+.LoginForm {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.firstInput,
+.secondInput {
+    width: 300px;
+    background-color: transparent;
+}
+
+.secondInput {
+    margin: 10px 0 5px;
+}
+
+.btn {
+    white-space: nowrap;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.error {
+    color: var(--error-color);
+    opacity: 0;
+}
+.errorActive {
+    opacity: 1;
+}

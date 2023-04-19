@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import MainIcon from 'shared/assets/icons/home.svg'
@@ -17,7 +17,7 @@ interface SidebarProps {
 
 export const Sidebar = ({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
-    const { t } = useTranslation();
+    const { t } = useTranslation('sidebar');
     const sidebarClasses = classNames(
         cls.Sidebar,
         { [cls.collapsed]: collapsed },
@@ -69,7 +69,6 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
                 className={cls.sidebarToggle}
-                theme={ButtonTheme.BACKGROUND}
             >
                 <ArrowIcon className={classNames(cls.arr, { [cls.left]: collapsed }, [])} />
             </Button>

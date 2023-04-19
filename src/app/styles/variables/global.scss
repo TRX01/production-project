@@ -25,4 +25,8 @@
 
     // Цвета
     --layout-color: rgba(0 0 0 / 60%);
+    --error-color: #c41e3a;
+    .app_dark_theme {
+        --error-color: #e32636;
+    }
 }

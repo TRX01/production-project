@@ -1,0 +1,21 @@
+.Input {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.clear {
+    border-radius: 3px;
+    border: 1px solid var(--secondary-color);
+    padding: 3px 5px;
+}
+.clear:focus {
+    outline: 1px solid var(--secondary-color);
+}
+
+.bottom_line {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--secondary-color);
+}

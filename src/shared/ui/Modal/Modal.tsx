@@ -1,13 +1,14 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss'
 
 interface ModalProps {
-    className?: string,
-    children?: React.ReactNode,
-    isOpen: boolean,
-    onClose: () => void,
+    className?: string;
+    children?: React.ReactNode;
+    isOpen: boolean;
+    onClose: () => void;
+    lazy?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
@@ -16,7 +17,16 @@ export const Modal = (props: ModalProps) => {
         children,
         isOpen,
         onClose,
+        lazy = false,
     } = props
+
+    const [isMounted, setIsMounted] = useState(false)
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true)
+        }
+    }, [isOpen])
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
@@ -45,6 +55,10 @@ export const Modal = (props: ModalProps) => {
             window.removeEventListener('keydown', onKeyDown)
         }
     }, [onKeyDown])
+
+    if (lazy && !isMounted) {
+        return null
+    }
 
     return (
         <Portal>
