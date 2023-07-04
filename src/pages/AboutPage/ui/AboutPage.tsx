@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input, InputTheme } from 'shared/ui/Input/Input';
+import { Loader } from 'shared/ui/Loader/Loader';
 
 const AboutPage = () => {
     const { t } = useTranslation('about');
