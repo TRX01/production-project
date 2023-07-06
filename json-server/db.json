@@ -10,5 +10,23 @@
       "username": "admin",
       "password": "egorka"
     }
+  ],
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "lol",
+      "secondname": "cheburek",
+      "currency": "USD",
+      "country": "USA",
+      "city": "America"
+    },
+    {
+      "id": "2",
+      "firstname": "egorka",
+      "secondname": "glembockiy",
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Elizovo"
+    }
   ]
 }

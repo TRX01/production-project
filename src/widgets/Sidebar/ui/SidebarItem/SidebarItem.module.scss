@@ -1,0 +1,46 @@
+.iconWrapper {
+    min-width: 80px;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    fill: var(--primary-color);
+}
+.link {
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 1.5s;
+    transition-delay: .3s;
+}
+
+.item {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font: var(--font-l);
+    color: var(--primary-color);
+    margin: 2px 0 0;
+}
+.item:hover {
+    transition: .5s;
+    color: var(--secondary-color);
+    .icon {
+        transition: .5s;
+        fill: var(--secondary-color);
+    }
+}
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
+    .item {
+        display: flex;
+    }
+    .link {
+        opacity: 0;
+        transition: .2s;
+        pointer-events: none;
+    }
+}

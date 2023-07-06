@@ -9,6 +9,8 @@ import MainIcon from 'shared/assets/icons/home.svg'
 import AboutIcon from 'shared/assets/icons/about.svg'
 import ArrowIcon from 'shared/assets/icons/arrow.svg'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { SidebarItemList } from 'widgets/Sidebar/model/items';
+import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -34,28 +36,13 @@ export const Sidebar = ({ className }: SidebarProps) => {
             className={sidebarClasses}
         >
             <div className={cls.items}>
-                <AppLink
-                    to={RoutePath.main}
-                    className={cls.item}
-                >
-                    <div className={cls.iconWrapper}>
-                        <MainIcon className={cls.icon} />
-                    </div>
-                    <span className={cls.link}>
-                        {t('Главная')}
-                    </span>
-                </AppLink>
-                <AppLink
-                    to={RoutePath.about}
-                    className={cls.item}
-                >
-                    <div className={cls.iconWrapper}>
-                        <AboutIcon className={cls.icon} />
-                    </div>
-                    <span className={cls.link}>
-                        {t('О сайте')}
-                    </span>
-                </AppLink>
+                {SidebarItemList.map(item => (
+                    <SidebarItem
+                        item={item}
+                        collapsed={collapsed}
+                        key={item.path}
+                    />
+                ))}
             </div>
 
             <div className={cls.switchers}>

@@ -61,6 +61,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'spaced-comment': 'off',
+        'lines-between-class-members': 'off',
     },
     globals: {
         __IS_DEV__: true,

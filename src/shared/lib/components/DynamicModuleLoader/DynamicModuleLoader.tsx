@@ -1,5 +1,5 @@
 import { FC, Reducer, useEffect } from 'react';
-import { useStore } from 'react-redux';
+import { useDispatch, useStore } from 'react-redux';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
 import { StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
 
@@ -23,16 +23,19 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
         removeAfterUnmount = false,
     } = props
     const store = useStore() as ReduxStoreWithManager
+    const dispatch = useDispatch()
 
     useEffect(() => {
         Object.entries(reducers).forEach(([reducerName, reducer]: reducerListEntry) => {
             store.reducerManager.add(reducerName, reducer)
+            dispatch({ type: `@INIT ${reducerName} REDUCER` })
         })
 
         return () => {
             if (removeAfterUnmount) {
                 Object.entries(reducers).forEach(([reducerName, reducer]: reducerListEntry) => {
                     store.reducerManager.add(reducerName, reducer)
+                    dispatch({ type: `@DESTROY ${reducerName} REDUCER` })
                 })
             }
         }
