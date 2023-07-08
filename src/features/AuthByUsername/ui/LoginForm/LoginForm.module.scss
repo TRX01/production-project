@@ -3,6 +3,7 @@
     min-height: 200px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .firstInput,
@@ -12,13 +13,12 @@
 }
 
 .secondInput {
-    margin: 10px 0 5px;
+    margin: 10px 0 auto;
 }
 
 .btn {
     white-space: nowrap;
     display: inline-block;
-    margin-top: 15px;
 }
 
 .error {

@@ -1,5 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ButtonHTMLAttributes, FC } from 'react';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import {
+    ButtonHTMLAttributes, FC, memo, ReactNode, 
+} from 'react';
 import cls from './Button.module.scss';
 
 export enum ButtonTheme {
@@ -12,21 +14,27 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     className?: string;
     theme?: ButtonTheme;
     square?: boolean;
+    children?: ReactNode
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button = memo((props: ButtonProps) => {
     const {
         className,
         children,
-        theme,
+        theme = ButtonTheme.CLEAR,
         square,
         disabled,
         ...otherProps
     } = props;
 
+    const mods: Mods = {
+        [cls.square]: square,
+        [cls.disabled]: disabled,
+    }
+
     const ButtonClasses = classNames(
         cls.Button,
-        { [cls.square]: square, [cls.disabled]: disabled },
+        mods,
         [className, cls[theme]],
     )
 
@@ -41,4 +49,4 @@ export const Button: FC<ButtonProps> = (props) => {
             </button>
         </div>
     );
-};
+});

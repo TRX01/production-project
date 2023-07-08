@@ -62,9 +62,11 @@ module.exports = {
         'no-param-reassign': 'off',
         'spaced-comment': 'off',
         'lines-between-class-members': 'off',
+        'no-undef': 'off',
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
     overrides: [
         {

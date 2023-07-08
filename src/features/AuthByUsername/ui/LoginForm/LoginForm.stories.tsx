@@ -17,51 +17,42 @@ export default {
 const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
 
 export const Form = Template.bind({});
-Form.args = {
-    isOpen: true,
-};
 Form.decorators = [
     StoreDecorator({
         loginForm: {
             username: '123',
             password: '123',
+            isLoading: false,
         },
     }),
 ]
 
 export const FormDark = Template.bind({});
-FormDark.args = {
-    isOpen: true,
-};
 FormDark.decorators = [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
         loginForm: {
             username: '123',
             password: '123',
+            isLoading: false,
         },
     }),
 ]
 
 export const FormDarkError = Template.bind({});
-FormDarkError.args = {
-    isOpen: true,
-};
 FormDarkError.decorators = [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
         loginForm: {
             username: '123',
             password: '123',
+            isLoading: false,
             error: 'thats some error',
         },
     }),
 ]
 
 export const FormDarkLoading = Template.bind({});
-FormDarkLoading.args = {
-    isOpen: true,
-};
 FormDarkLoading.decorators = [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({

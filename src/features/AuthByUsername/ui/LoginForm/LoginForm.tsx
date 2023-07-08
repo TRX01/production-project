@@ -48,30 +48,35 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
             reducers={initialReducers}
         >
             <div className={classNames(cls.LoginForm, {}, [className])}>
-                <Input
-                    autoFocus
-                    type="text"
-                    className={cls.firstInput}
-                    placeholder={t('Введите username')}
-                    onChange={onChangeUsername}
-                    value={username || ''}
-                    theme={InputTheme.BOTTOM_LINE}
-                />
-                <Input
-                    type="text"
-                    className={cls.secondInput}
-                    placeholder={t('Введите пароль')}
-                    onChange={onChangePassword}
-                    value={password || ''}
-                    theme={InputTheme.BOTTOM_LINE}
-                />
-                <span
-                    className={classNames(cls.error, { [cls.errorActive]: error }, [])}
-                >
-                    {t('Вы ввели неверный логин или пароль')}
-                </span>
+
+                <div>
+                    <Input
+                        autoFocus
+                        type="text"
+                        className={cls.firstInput}
+                        placeholder={t('Введите username')}
+                        onChange={onChangeUsername}
+                        value={username || ''}
+                        theme={InputTheme.BOTTOM_LINE}
+                    />
+                    <Input
+                        type="text"
+                        className={cls.secondInput}
+                        placeholder={t('Введите пароль')}
+                        onChange={onChangePassword}
+                        value={password || ''}
+                        theme={InputTheme.BOTTOM_LINE}
+                    />
+
+                    <span
+                        className={classNames(cls.error, { [cls.errorActive]: error }, [])}
+                    >
+                        {t('Вы ввели неверный логин или пароль')}
+                    </span>
+                </div>
+                
                 <Button
-                    theme={ButtonTheme.OUTLINE}
+                    theme={ButtonTheme.OUTLINE_PURPLE}
                     className={cls.btn}
                     onClick={onLoginClick}
                     disabled={isLoading}

@@ -1,6 +1,4 @@
-import { useSelector } from 'react-redux';
 import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
-import { DeepPartial } from '@reduxjs/toolkit';
 import { getCounter } from './getCounter';
 
 describe('get Counter selector testing', () => {

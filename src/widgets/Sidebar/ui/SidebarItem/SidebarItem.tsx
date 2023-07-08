@@ -2,6 +2,7 @@ import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { SidebarItemType } from 'widgets/Sidebar/model/items';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { memo } from 'react';
 import cls from './SidebarItem.module.scss'
 
 interface SidebarItemProps {
@@ -9,7 +10,7 @@ interface SidebarItemProps {
     collapsed: boolean;
 }
 
-export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
+export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     const { t } = useTranslation('sidebar')
 
     return (
@@ -25,4 +26,4 @@ export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
             </span>
         </AppLink>
     )
-}
+})

@@ -11,22 +11,14 @@
       "password": "egorka"
     }
   ],
-  "profile": [
-    {
+  "profile": {
       "id": "1",
-      "firstname": "lol",
-      "secondname": "cheburek",
-      "currency": "USD",
-      "country": "USA",
-      "city": "America"
-    },
-    {
-      "id": "2",
+      "username": "mega_pokemon",
       "firstname": "egorka",
-      "secondname": "glembockiy",
+      "lastname": "jordan",
+      "age": "16",
       "currency": "RUB",
       "country": "Russia",
       "city": "Elizovo"
-    }
-  ]
+  }
 }

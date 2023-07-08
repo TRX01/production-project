@@ -1,4 +1,6 @@
-import React, { InputHTMLAttributes, useEffect, useRef } from 'react';
+import React, {
+    InputHTMLAttributes, memo, useEffect, useRef, 
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss'
 
@@ -15,7 +17,7 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value'
     autoFocus?: boolean;
 }
 
-export const Input = (props: InputProps) => {
+export const Input = memo((props: InputProps) => {
     const {
         theme = InputTheme.CLEAR,
         className,
@@ -50,4 +52,4 @@ export const Input = (props: InputProps) => {
             />
         </div>
     );
-};
+});
